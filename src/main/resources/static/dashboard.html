@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="toast-container" id="toastContainer"></div>
+    <div class="container wide">
+        <div class="top-bar">
+            <h2>Students</h2>
+            <button class="secondary" id="logoutBtn">Logout</button>
+        </div>
+
+        <div id="adminPanel" style="display:none;">
+            <h3>Add Student</h3>
+            <div class="field">
+                <input type="text" id="name" placeholder="Full name">
+                <div class="field-error" id="nameError"></div>
+            </div>
+            <div class="field">
+                <input type="email" id="email" placeholder="Email">
+                <div class="field-error" id="emailError"></div>
+            </div>
+            <div class="field">
+                <input type="text" id="course" placeholder="Course">
+                <div class="field-error" id="courseError"></div>
+            </div>
+            <button id="addBtn">Add Student</button>
+        </div>
+
+        <h3>All Students</h3>
+
+        <div class="field">
+            <input type="text" id="searchInput" placeholder="Search by name or course...">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th data-sort="id" class="sortable">ID</th>
+                    <th data-sort="name" class="sortable">Name</th>
+                    <th data-sort="email" class="sortable">Email</th>
+                    <th data-sort="course" class="sortable">Course</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody"></tbody>
+        </table>
+
+        <div class="pagination">
+            <button class="secondary" id="prevBtn">&laquo; Prev</button>
+            <span id="pageInfo"></span>
+            <button class="secondary" id="nextBtn">Next &raquo;</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="editModalOverlay">
+        <div class="modal">
+            <h3>Edit Student</h3>
+            <input type="hidden" id="editId">
+            <div class="field">
+                <input type="text" id="editName" placeholder="Full name">
+                <div class="field-error" id="editNameError"></div>
+            </div>
+            <div class="field">
+                <input type="email" id="editEmail" placeholder="Email">
+                <div class="field-error" id="editEmailError"></div>
+            </div>
+            <div class="field">
+                <input type="text" id="editCourse" placeholder="Course">
+                <div class="field-error" id="editCourseError"></div>
+            </div>
+            <div class="modal-actions">
+                <button class="secondary" id="cancelEditBtn">Cancel</button>
+                <button id="saveEditBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

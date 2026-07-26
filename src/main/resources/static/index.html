@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="toast-container" id="toastContainer"></div>
+    <div class="container">
+        <h2>Student Management — Login</h2>
+        <div id="banner" class="banner error"></div>
+        <form id="loginForm" novalidate>
+            <div class="field">
+                <input type="text" id="username" placeholder="Username">
+                <div class="field-error" id="usernameError"></div>
+            </div>
+            <div class="field">
+                <input type="password" id="password" placeholder="Password">
+                <div class="field-error" id="passwordError"></div>
+            </div>
+            <button type="submit" id="loginBtn">Login</button>
+        </form>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>

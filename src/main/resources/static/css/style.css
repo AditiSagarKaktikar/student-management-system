@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.container.wide {
+    max-width: 800px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+h3 {
+    margin: 20px 0 10px;
+    font-size: 16px;
+    color: #444;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.15s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4a6cf7;
+}
+
+input.invalid {
+    border-color: #e03131;
+}
+
+.field-error {
+    color: #e03131;
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
+}
+
+button {
+    cursor: pointer;
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 6px;
+    transition: background 0.15s, opacity 0.15s;
+}
+
+button:hover {
+    background: #3a5ce5;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button.secondary {
+    background: #e5e7eb;
+    color: #333;
+}
+
+button.secondary:hover {
+    background: #d1d5db;
+}
+
+button.danger {
+    background: #e03131;
+    width: auto;
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-top: 0;
+}
+
+button.danger:hover {
+    background: #c92a2a;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-bar button {
+    width: auto;
+    padding: 8px 14px;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+th {
+    color: #666;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.empty-state {
+    text-align: center;
+    color: #999;
+    padding: 30px 0;
+}
+
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.pagination button {
+    width: auto;
+    padding: 8px 14px;
+}
+
+#pageInfo {
+    font-size: 13px;
+    color: #666;
+}
+
+th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+th.sortable:hover {
+    color: #4a6cf7;
+}
+
+th.sortable.active {
+    color: #4a6cf7;
+}
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.toast {
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideIn 0.25s ease-out;
+    min-width: 220px;
+}
+
+.toast.success { background: #2b8a3e; }
+.toast.error { background: #c92a2a; }
+
+.toast.fade-out {
+    animation: fadeOut 0.25s ease-in forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: translateX(20px); }
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 360px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.modal-actions button {
+    margin-top: 0;
+}
